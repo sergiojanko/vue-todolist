@@ -9,7 +9,7 @@ const app = new Vue ({
             this.tasks.splice(i,1);
         },
         addTask() {
-            this.tasks.push(this.newTask);
+            if (this.newTask.trim()) this.tasks.push(this.newTask);
             this.newTask = "";
         }
     }
