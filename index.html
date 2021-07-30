@@ -21,13 +21,25 @@
     <main id="app">
       <div class="container">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Scrivi qui..." />
-          <span class="input-group-text" id="basic-addon2">Aggiungi</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Scrivi qui..."
+            v-model="newTask"
+          />
+          <span @click="addTask" class="input-group-text" id="basic-addon2"
+            >Aggiungi</span
+          >
         </div>
         <ul class="list-group">
           <li v-for="(task,i) in tasks" class="list-group-item">
             {{task}}
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button
+              @click="removeTask(i)"
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+            ></button>
           </li>
         </ul>
       </div>
